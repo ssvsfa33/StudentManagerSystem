@@ -1,20 +1,25 @@
+package com.jay.studentmanager.model;
 
-
+/**
+ * 用户实体：用户名、密码、身份证号、手机号。
+ * 手机号由原来的 long 改为 String：手机号是“编号”不是“数值”，
+ * 用 String 才能正确表达“不以 0 开头”这条校验规则。
+ */
 public class User {
+
     private String username;
     private String password;
     private String personid;
-    private long phonenumber;
+    private String phonenumber;
 
-    public User(){
-
+    public User() {
     }
 
-    public User(String username,String password,String personid,long phonenumber){
-        this.username=username;
-        this.password=password;
-        this.personid=personid;
-        this.phonenumber=phonenumber;
+    public User(String username, String password, String personid, String phonenumber) {
+        this.username = username;
+        this.password = password;
+        this.personid = personid;
+        this.phonenumber = phonenumber;
     }
 
     public String getUsername() {
@@ -41,13 +46,11 @@ public class User {
         this.personid = personid;
     }
 
-    public long getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(long phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-
-
 }
